@@ -173,7 +173,7 @@ function LandingPage() {
       <footer className="border-t border-border py-8">
         <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
           <p className="text-xs text-muted-foreground">
-            © 2026 FinVault. Built with care for your financial clarity.
+            © 2026 FinVault. All rights reserved.
           </p>
         </div>
       </footer>
