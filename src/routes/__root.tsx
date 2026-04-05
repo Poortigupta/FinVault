@@ -2,7 +2,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 
-import appCss from "../styles.css?url";
+import appCss from "../style.css?url";
 
 function NotFoundComponent() {
   return (
