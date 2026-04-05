@@ -21,10 +21,14 @@ function RegisterPage() {
   const [loading, setLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-  if (isAuthenticated) {
-    navigate({ to: "/dashboard" });
-    return null;
-  }
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate({ to: "/dashboard", replace: true });
+    }
+  }, [isAuthenticated, navigate]);
+
+  if (isAuthenticated) return null;
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -46,11 +50,11 @@ function RegisterPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="relative flex min-h-screen items-center justify-center bg-background px-4">
       <div className="absolute right-4 top-4 z-10"><ThemeToggle /></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--color-primary)/0.06,transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--color-primary)/0.06,transparent_60%)]" />
       <div
-        className={`relative w-full max-w-sm transition-all duration-500 ease-out ${mounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-5 scale-[0.97]"}`}
+        className={`relative z-20 w-full max-w-sm transition-all duration-500 ease-out ${mounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-5 scale-[0.97]"}`}
       >
         <div className="mb-8 text-center">
           <Link to="/" className="inline-flex items-center gap-2.5 mb-6">

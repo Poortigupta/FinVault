@@ -61,37 +61,34 @@ function LandingPage() {
     <div className="min-h-screen bg-background">
       {/* Nav */}
       <nav className="border-b border-border bg-card/80 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-          <div className="flex items-center gap-2.5">
+        <div className="flex w-full items-center px-3 py-4 sm:px-6 lg:px-8">
+          <div className="-ml-1 flex items-center gap-2.5">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
               <Sparkles className="h-4 w-4 text-primary-foreground" />
             </div>
             <span className="font-display text-lg font-bold text-foreground">FinVault</span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-2 sm:gap-3">
             <ThemeToggle />
-            {isAuthenticated ? (
+            <Link
+              to="/login"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:px-4"
+            >
+              Sign In
+            </Link>
+            <Link
+              to="/login"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:px-4"
+            >
+              Get Started <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+            {isAuthenticated && (
               <Link
                 to="/dashboard"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                className="hidden items-center gap-1.5 rounded-lg border border-border bg-background px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent sm:inline-flex"
               >
-                Dashboard <ArrowRight className="h-3.5 w-3.5" />
+                Dashboard
               </Link>
-            ) : (
-              <>
-                <Link
-                  to="/login"
-                  className="rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  to="/register"
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                >
-                  Get Started <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </>
             )}
           </div>
         </div>
