@@ -145,7 +145,7 @@ function LandingPage() {
             className={`mb-12 text-center transition-all duration-500 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">
-              Everything you need to manage money
+              Everything you need for money management
             </h2>
             <p className="mt-3 text-sm text-muted-foreground sm:text-base">
               Powerful features wrapped in a clean, intuitive interface
