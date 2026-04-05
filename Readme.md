@@ -228,7 +228,7 @@ npm run dev
 The application will start on:
 
 
-http://localhost:5173
+https://finvault-lilac.vercel.app/
 
 
 ---
